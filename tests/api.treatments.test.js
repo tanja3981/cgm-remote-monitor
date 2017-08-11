@@ -87,6 +87,18 @@ describe('Treatment API', function ( ) {
   });
 
   it('post a treatment array and dedupe', function (done) {
+    var doneCalled = false;
+
+    self.ctx.bus.on('data-loaded', function dataWasLoaded ( ) {
+      self.ctx.ddata.treatments.length.should.equal(3);
+      self.ctx.ddata.treatments[0].mgdl.should.equal(100);
+
+      //if travis is slow the 2 posts take long enough that 2 data-loaded events are emitted
+      if (!doneCalled) { done(); }
+
+      doneCalled = true;
+    });
+
     self.ctx.treatments().remove({ }, function ( ) {
       var now = (new Date()).toISOString();
       request(self.app)
