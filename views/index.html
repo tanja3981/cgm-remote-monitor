@@ -328,7 +328,11 @@
                         <span class="translate">Insulin Given</span>
                         <input type="number" step="any" min="0" id="insulinGiven" placeholder="Amount in units" class="titletranslate" pattern="[0-9.,]*" />
                     </label>
-                    <label id="insulinSplitLabel" for="insulinSplit" class="left-column short-label">
+                    <label id="customDIALabel" for="customDIA" class="left-column short-label">
+                        <span class="translate">Custom DIA</span>
+                        <input type="number" step="any" min="0" id="customDIA" placeholder="custom DIA" class="titletranslate" pattern="[0-9.,]*">
+                    </label>
+                    <label id="insulinSplitLabel" class="left-column short-label">
                         <span class="translate">Split</span>
                         <input type="number" step="5" min="0" max="100" style="width:50px" id="insulinSplitNow" placeholder="% now" class="titletranslate" pattern="\d*" />%
                         :
