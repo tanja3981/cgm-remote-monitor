@@ -16,7 +16,7 @@
     },
     "security": [
         {
-            "api_secret": [],
+            "api-secret": [],
             "token_in_url": [],
             "jwtoken": []
         }
@@ -644,11 +644,11 @@
     },
     "components": {
         "securitySchemes": {
-            "api_secret": {
+            "api-secret": {
                 "type": "apiKey",
-                "name": "api_secret",
+                "name": "api-secret",
                 "in": "header",
-                "description": "The hash of the API_SECRET env var"
+                "description": "The hash of the API-SECRET env var"
             },
             "token_in_url": {
                 "type": "apiKey",
